@@ -1,21 +1,25 @@
-# Todo Fullstack Application
-
-A fullstack Todo application with React, Node.js, TypeScript
 
 
-## Getting Started
+# Todo Fullstack
 
-1. **Clone the repository**
+Uma aplicação  fullstack com React, Node.js, TypeScript
+
+## Iniciando
+
+1. **Clone o repositório**
    ```bash
    git clone https://github.com/your-repo/todo-fullstack.git
    cd todo
+   ```
 
-2. **Run the Front end**
+2. **Execute o Front-end**
     ```bash
     cd todo-frontend
     npm run dev
+    ```
 
-3. **Run the back end**
+3. **Execute o Back-end**
     ```bash
     cd todo-backend
     npm run dev
+    ```

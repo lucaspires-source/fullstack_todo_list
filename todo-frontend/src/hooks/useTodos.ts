@@ -7,7 +7,6 @@ export const useTodos = () => {
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
 
-  console.log(todos)
   useEffect(() => {
     const fetchTodos = async () => {
       try {
@@ -22,7 +21,6 @@ export const useTodos = () => {
 
   const addTodo = async (title: string) => {
     try {
-        console.log(title)
       const response = await TodoService.create(title);
       
       setTodos(prevTodos => [
@@ -53,7 +51,6 @@ export const useTodos = () => {
 
   const updateTodoTitle = async (id: number, newTitle: string) => {
     try {
-      console.log('çhamou update')
       const response = await TodoService.updateTitle(id, newTitle );
       setTodos(todos.map(t => t.id === id ? response.data : t));
     } catch (error) {

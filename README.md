@@ -1,6 +1,6 @@
 
 
-Here's the modified documentation with Node.js version specification and Docker instructions:
+
 
 # Todo Fullstack
 

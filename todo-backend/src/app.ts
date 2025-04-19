@@ -13,11 +13,10 @@ import { Request, Response,} from 'express';
 export const createApp = () => {
     const app = express();
   
-    // 1. Environment Configuration
-    app.set('trust proxy', 1); // Trust first proxy
+
+    app.set('trust proxy', 1); 
     app.disable('x-powered-by');
   
-    // 2. Security Middleware
     app.use(helmet({
       contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false
     }));
@@ -31,8 +30,6 @@ export const createApp = () => {
       credentials: true,
       maxAge: 86400
     }));
-  
-    // 3. Request Processing
     app.use(express.json({ limit: '10kb' }));
     app.use(express.urlencoded({ extended: true }));
   

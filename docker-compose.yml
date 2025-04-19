@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./todo-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=/api  # Will be proxied through Nginx
+    networks:
+      - todo-network
+
+  backend:
+    build: ./todo-backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./todo-backend/database.sqlite:/app/database.sqlite
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    networks:
+      - todo-network
+
+networks:
+  todo-network:

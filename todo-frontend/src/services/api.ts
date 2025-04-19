@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Todo } from '../types/todo';
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:3000/api',
+  baseURL: import.meta.env.VITE_API_URL ||   '/api',
 });
 
 export const TodoService = {

@@ -21,10 +21,10 @@ export const createApp = () => {
     app.use(helmet({
       contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false
     }));
-    
+     
     app.use(cors({
       origin: [
-        process.env.FRONTEND_URL,
+        'http://frontend',
         'http://localhost:5173',      ].filter(Boolean) as string[],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       allowedHeaders: ['Content-Type', 'Authorization'],
